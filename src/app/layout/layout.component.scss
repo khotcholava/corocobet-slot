@@ -1,0 +1,33 @@
+:host {
+  .menu-item {
+    position: relative;
+
+    &:hover {
+      @extend .active-item;
+    }
+  }
+}
+
+.active-item {
+  .menu-text {
+    color: #fff;
+    transition: 0.3s ease-in-out;
+  }
+
+  .icon {
+    filter: brightness(0) invert(1);
+    transition: 0.3s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    background-color: #15af44;
+    position: absolute;
+    width: 3px;
+    bottom: 50%;
+    left: -17px;
+    transform: translateY(50%);
+    height: 80px;
+    border-radius: 0 5px 5px 0;
+  }
+}
