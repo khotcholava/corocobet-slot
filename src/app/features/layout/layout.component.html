@@ -1,0 +1,19 @@
+<section class="flex h-full">
+  <aside class="h-full w-[80px] bg-croco-gray-900 p-[18px]">
+    <nav>
+      <img src="./assets/media/icons/logo.svg" alt="Logo" class="w-[58px] h-[45px]" />
+      <ul class="mt-[40px] flex flex-col gap-[42px]">
+        @for (item of MENU_ITEMS; track item.title) {
+          <app-sidebar-item [menuItem]="item"/>
+        }
+      </ul>
+    </nav>
+  </aside>
+  <section class="flex flex-col w-full">
+    <header class="h-[80px] w-full bg-croco-gray-900-darker">
+    </header>
+    <main class="p-[8px]">
+      <router-outlet />
+    </main>
+  </section>
+</section>

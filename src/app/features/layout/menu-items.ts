@@ -19,4 +19,4 @@ export const MENU_ITEMS = [
     icon: 'casino.svg',
     title: 'casino',
   },
-]
+];

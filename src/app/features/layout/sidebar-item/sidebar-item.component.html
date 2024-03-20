@@ -1,0 +1,12 @@
+<div class="menu-item">
+  <li
+    routerLinkActive="active-item"
+    [routerLink]="menuItem().route"
+    class="w-full h-[50px] flex flex-col gap-[10px] items-center hover:text-croco-gray-100 hover:cursor-pointer transition ease-in-out delay-150"
+  >
+    <img class="icon" [src]="'assets/media/icons/' + menuItem().icon" alt="" />
+    <span class="text-croco-gray-700 text-[14px] menu-text">{{
+        menuItem().title | transloco
+      }}</span>
+  </li>
+</div>

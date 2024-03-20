@@ -1,9 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ApiResponse } from '../../../common/common.interface';
 import { Provider, SlotGameCategory } from './slot.model';
 import { environment } from '../../../environment/environment';
+import { ApiResponse } from "../../../core";
 
 @Injectable({
   providedIn: 'root'

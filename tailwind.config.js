@@ -6,7 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'croco-dark-primary': '#1A1E23',
         'croco-gray-900': '#2A3139',
+        'croco-gray-900-darker': '#252B33',
         'croco-gray-950': '#1A1E23',
         'croco-gray-700': '#6A7787',
         'croco-white':"#fff",
