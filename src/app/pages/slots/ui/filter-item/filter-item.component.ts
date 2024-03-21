@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { FilterItemProps } from './filter-item.types';
 
 @Component({
   selector: 'app-filter-item',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './filter-item.component.scss'
 })
 export class FilterItemComponent {
-
+  props = input.required<FilterItemProps>()
 }

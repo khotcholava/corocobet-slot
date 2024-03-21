@@ -1,0 +1,31 @@
+.active {
+  color: theme('colors.white');
+
+  .icon {
+    filter: invert(57%) sepia(55%) saturate(4247%) hue-rotate(103deg) brightness(94%) contrast(84%);
+  }
+
+  .title .count {
+    color: theme('colors.croco-active');
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    transform: translateY(-50%);
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: theme('colors.croco-active');
+  }
+}
+
+.slot-filter-tem {
+  &:hover {
+    @extend .active;
+  }
+}

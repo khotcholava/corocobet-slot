@@ -1,11 +1,22 @@
+import { SlotCategoryEnum } from '../../../core/enums/slot-category.enum';
+
+export interface SlotStateModel {
+  categories: SlotGameCategory[];
+  selectedCategory: SlotGameCategory | null;
+  games: SlotGame[];
+  providers: Provider[];
+}
+
+
 export interface SlotGameCategory {
   type: string;
-  category: string;
+  category: SlotCategoryEnum;
   platform: string;
   name: string;
   order: 1;
   games: SlotGame[];
   totalGames: number;
+  group: string;
 }
 
 export interface SlotGame {

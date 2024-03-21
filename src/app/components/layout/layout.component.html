@@ -1,4 +1,4 @@
-<section class="flex h-full">
+<section class="flex h-screen	">
   <aside class="h-full w-[80px] bg-croco-gray-900 p-[18px]">
     <nav>
       <img src="./assets/media/icons/logo.svg" alt="Logo" class="w-[58px] h-[45px]" />
@@ -9,11 +9,12 @@
       </ul>
     </nav>
   </aside>
-  <section class="flex flex-col w-full">
-    <header class="h-[80px] w-full bg-croco-gray-900-darker">
-    </header>
-    <main class="p-[8px]">
-      <router-outlet />
-    </main>
+  <section class="flex flex-col items-center overflow-auto w-full">
+    <header class="h-[80px] bg-croco-gray-900-darker w-full"></header>
+    <section class="w-full ">
+      <main class="p-[8px]">
+        <router-outlet />
+      </main>
+    </section>
   </section>
 </section>

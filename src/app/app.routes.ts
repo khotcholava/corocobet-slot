@@ -9,7 +9,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./features/layout/layout.component').then((m) => m.LayoutComponent),
+      import('./components/layout/layout.component').then((m) => m.LayoutComponent),
     children: [
       {
         path: 'slots',

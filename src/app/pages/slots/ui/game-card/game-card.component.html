@@ -1,0 +1,6 @@
+<div class="cursor-pointer slot-item h-full w-full min-h-[178px] overflow-hidden relative flex flex-col content-between">
+  <div class="image" [ngStyle]="{ backgroundImage: 'url(' + game().image + ')' }">
+    <button class="play-btn absolute z-10">PLAY</button>
+  </div>
+  <div class="title bg-croco-gray-900-darker text-white">{{ game().name }}</div>
+</div>
