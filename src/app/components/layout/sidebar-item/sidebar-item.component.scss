@@ -11,7 +11,7 @@
 
 .active-item {
   .menu-text {
-    color: #fff;
+    color: theme('colors.white');
     transition: 0.3s ease-in-out;
   }
 
@@ -22,7 +22,7 @@
 
   &::after {
     content: "";
-    background-color: #15af44;
+    background-color: theme('colors.croco-active');
     position: absolute;
     width: 3px;
     bottom: 50%;

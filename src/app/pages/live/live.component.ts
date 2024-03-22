@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-live',
   standalone: true,
   imports: [],
-  templateUrl: './live.component.html',
-  styleUrl: './live.component.scss'
+  template: `<p>live works!</p>`
 })
 export class LiveComponent {
 

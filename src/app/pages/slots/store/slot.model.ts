@@ -7,7 +7,6 @@ export interface SlotStateModel {
   slotsByProvider: Provider[];
 }
 
-
 export interface SlotGameCategory {
   type: string;
   category: SlotCategoryEnum;

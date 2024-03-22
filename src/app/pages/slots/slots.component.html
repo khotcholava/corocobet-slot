@@ -4,7 +4,8 @@
   </header>
 </section>
 <section class="rounded-md overflow-hidden mt-[8px]">
-  <div class="flex flex-wrap bg-croco-dark-primary-700 items-center gap-[40px] min-h-[55px] h-[55px] px-[20px]">
+  <div
+    class="flex flex-wrap bg-croco-dark-primary-700 items-center gap-[40px] min-h-[55px] h-[55px] px-[20px]">
     @for (category of categories$ | async; track category.order) {
       <app-filter-item
         (click)="selectCategory(category)"
@@ -19,23 +20,25 @@
     }
   </div>
   <div class=" bg-croco-dark-primary-500"
-      >
-    <button (click)="showMore()"
-            class="bg-croco-dark-primary-500 float-right leading-[55px] text-white font-medium px-4 flex items-center gap-[10px] ">
-      {{(!expanded ? 'seeMore'  : 'seeLess') | transloco}}
+  >
+    <button
+      (click)="showMore()"
+      class="bg-croco-dark-primary-500 float-right leading-[55px] text-white font-medium px-4 flex items-center gap-[10px] "
+    >
+      {{ (!expanded ? 'seeMore' : 'seeLess') | transloco }}
       <img class="transition-all " [ngClass]="{
-
       'transform rotate-180': expanded
-      }" src="assets/media/icons/chevron-down.svg" alt="">
+      }"
+           src="assets/media/icons/chevron-down.svg" alt="chevron down">
     </button>
-    <div class="h-[55px] leading-[55px] overflow-hidden px-[20px]"  [class.h-auto]="expanded">
+    <div class="h-[55px] leading-[55px] overflow-hidden px-[20px]" [class.h-auto]="expanded">
       @for (provider of providers$ | async; track provider._id) {
         <app-filter-item
           class="h-full text-croco-gray-100 pr-[15px] inline-block opacity-[0.6]"
           (click)="selectProvider(provider)"
           [props]="{
-        title: provider.name,
-        isActive: selectedProvider?._id === provider._id,
+            title: provider.name,
+            isActive: selectedProvider?._id === provider._id,
       }"
         />
       }
@@ -43,7 +46,7 @@
 
   </div>
   <section class="games mt-[8px]">
-    <ng-container  *ngFor="let game of games$ | async; let i = index">
+    <ng-container *ngFor="let game of games$ | async; let i = index">
       <app-game-card [class.first]="i===0" [game]="game"/>
     </ng-container>
   </section>

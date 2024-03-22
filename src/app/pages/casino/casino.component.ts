@@ -4,8 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-casino',
   standalone: true,
   imports: [],
-  templateUrl: './casino.component.html',
-  styleUrl: './casino.component.scss'
+  template: `<p>casino works!</p>`
 })
 export class CasinoComponent {
 
