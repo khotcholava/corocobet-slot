@@ -24,8 +24,8 @@ export class SlotState {
   private slotsService = inject(SlotService);
 
   @Action(FetchGamesWithCategories)
-  getGames(ctx: StateContext<SlotStateModel>, {payload}: FetchGamesWithCategories) {
-    return this.slotsService.fetchGamesWithCategories(payload).pipe(
+  getGames(ctx: StateContext<SlotStateModel>) {
+    return this.slotsService.fetchGamesWithCategories().pipe(
       tap((categories) => {
         ctx.patchState({
           categories

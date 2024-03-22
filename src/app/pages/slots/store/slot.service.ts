@@ -12,7 +12,7 @@ export class SlotService {
   private baseURL = environment.apiUrl;
   private http = inject(HttpClient);
 
-  public fetchGamesWithCategories(params = {}): Observable<SlotGameCategory[]> {
+  public fetchGamesWithCategories(): Observable<SlotGameCategory[]> {
     return this.http.get<ApiResponse<SlotGameCategory[]>>(`${this.baseURL}/v2/slot/categories`, {
       params: {
         include: 'games'
