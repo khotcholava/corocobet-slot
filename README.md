@@ -7,8 +7,7 @@ Crocobet Slots is a dynamic and user-friendly slots game application. It allows 
 - [Technologies](#technologies)
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Technologies
 
