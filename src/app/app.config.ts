@@ -1,4 +1,4 @@
-import { ApplicationConfig, importProvidersFrom, isDevMode } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, isDevMode, LOCALE_ID } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -10,6 +10,10 @@ import { SlotState } from './pages/slots';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'ka'
+    },
     provideRouter(routes),
     provideHttpClient(),
     provideTransloco({

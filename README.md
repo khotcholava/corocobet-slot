@@ -1,27 +1,36 @@
-# CrocobetSlots
+# Crocobet Slots Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+Crocobet Slots is a dynamic and user-friendly slots game application. It allows users to explore various slots by categories such as "popular", "popular on web", "new", "buy bonus", and also fetch slots by providers like "HEROPICKS", "EGT", "PRAGMATIC", "IGROSOFT", "EGT DIGITAL", "PLAYNGO" and others.
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Technologies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project is created with:
 
-## Build
+- Angular 17: A platform for building web applications.
+- NgXs: A state management pattern + library for Angular.
+- TailwindCSS: A utility-first CSS framework for rapidly building custom user interfaces.
+- Transloco: The internationalization (i18n) library for Angular.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+Follow these steps to get the app up and running:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Install [Node.js](https://nodejs.org/en/) latest version (20.11.1).
+2. Clone the [repository](https://github.com/khotcholava/corocobet-slot).
+3. Run `yarn install` in the project directory to install the dependencies.
+4. Run `ng s --o` to start the application. This command will automatically open the application in your default web browser.
 
-## Running end-to-end tests
+## Running the Application
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+To start the application, navigate to the project directory in your terminal and run the following command:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+ng s --o
