@@ -1,22 +1,22 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
-import { SliderComponent } from '../../components/slider/slider.component';
-import { FilterItemComponent } from './ui/filter-item/filter-item.component';
+import { SliderComponent } from '../../components';
 import { Store } from '@ngxs/store';
 import {
   FetchGamesWithCategories,
   GetSlotByProviders,
   GetSlotProviders,
   SetGames
-} from './store/slot.actions';
-import { SlotSelectors } from './store/slot.selectors';
+} from './store';
+import { SlotSelectors } from './store';
 import { AsyncPipe, JsonPipe, NgClass, NgForOf } from '@angular/common';
-import { SidebarItemComponent } from '../../components/layout/sidebar-item/sidebar-item.component';
+import { SidebarItemComponent } from '../../components';
 import { SlotCategoryEnum } from '../../core/enums/slot-category.enum';
-import { Provider, SlotGameCategory } from './store/slot.model';
-import { GameCardComponent } from './ui/game-card/game-card.component';
+import { Provider, SlotGameCategory } from './store';
 import { Nullable } from '../../core/interfaces/util';
 import { TranslocoPipe } from '@ngneat/transloco';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FilterItemComponent } from "../../components";
+import { GameCardComponent } from "../../components";
 
 @Component({
   selector: 'app-slots',

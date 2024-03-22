@@ -1,0 +1,5 @@
+export * from './layout/layout.component'
+export * from './layout/sidebar-item/sidebar-item.component'
+export * from './slider/slider.component'
+export * from './filter-item/filter-item.component'
+export  * from './game-card/game-card.component'
