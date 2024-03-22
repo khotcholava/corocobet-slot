@@ -1,22 +1,21 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
-import { SliderComponent } from '../../components';
+import { FilterItemComponent, GameCardComponent, SidebarItemComponent, SliderComponent } from '../../components';
 import { Store } from '@ngxs/store';
 import {
   FetchGamesWithCategories,
   GetSlotByProviders,
   GetSlotProviders,
-  SetGames
+  Provider,
+  SetGames,
+  SlotGameCategory,
+  SlotSelectors
 } from './store';
-import { SlotSelectors } from './store';
 import { AsyncPipe, JsonPipe, NgClass, NgForOf } from '@angular/common';
-import { SidebarItemComponent } from '../../components';
 import { SlotCategoryEnum } from '../../core/enums/slot-category.enum';
-import { Provider, SlotGameCategory } from './store';
 import { Nullable } from '../../core/interfaces/util';
 import { TranslocoPipe } from '@ngneat/transloco';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { FilterItemComponent } from "../../components";
-import { GameCardComponent } from "../../components";
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-slots',
@@ -46,8 +45,12 @@ export class SlotsComponent implements OnInit {
   expanded = false;
 
   ngOnInit() {
-    this.store.dispatch(new FetchGamesWithCategories());
-    this.store.dispatch(new GetSlotProviders());
+    combineLatest([
+      this.store.dispatch(new FetchGamesWithCategories()),
+      this.store.dispatch(new GetSlotProviders())]).pipe(
+      takeUntilDestroyed(this.destroyRef$)
+    ).subscribe();
+
     this.categories$.pipe(
       takeUntilDestroyed(this.destroyRef$)
     ).subscribe(categories => {
@@ -82,7 +85,7 @@ export class SlotsComponent implements OnInit {
     this.store.dispatch(new GetSlotByProviders(provider.provider));
   }
 
-  showMore() {
+  toggleProviders() {
     this.expanded = !this.expanded;
   }
 }
