@@ -43,8 +43,8 @@
 
   </div>
   <section class="games mt-[8px]">
-    @for (game of games$ | async; track game?.gameId; let i = $index) {
+    <ng-container  *ngFor="let game of games$ | async; let i = index">
       <app-game-card [class.first]="i===0" [game]="game"/>
-    }
+    </ng-container>
   </section>
 </section>

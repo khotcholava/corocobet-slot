@@ -2,12 +2,7 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { SlotStateModel } from './slot.model';
 import { inject, Injectable } from '@angular/core';
 import { SlotService } from './slot.service';
-import {
-  FetchGamesWithCategories,
-  GetSlotByProviders,
-  GetSlotProviders,
-  SetGames
-} from './slot.actions';
+import { FetchGamesWithCategories, GetSlotByProviders, GetSlotProviders, SetGames } from './slot.actions';
 import { tap } from 'rxjs';
 
 @State<SlotStateModel>({
@@ -36,7 +31,7 @@ export class SlotState {
 
   @Action(SetGames)
   setGames(ctx: StateContext<SlotStateModel>, {games}: SetGames) {
-    ctx.patchState({
+    return ctx.patchState({
       games
     });
   }
