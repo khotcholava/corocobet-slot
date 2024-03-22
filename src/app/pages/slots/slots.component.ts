@@ -37,9 +37,11 @@ import { combineLatest } from 'rxjs';
 export class SlotsComponent implements OnInit {
   private store = inject(Store);
   private destroyRef$ = inject(DestroyRef);
+
   categories$ = this.store.select(SlotSelectors.categories);
   games$ = this.store.select(SlotSelectors.games);
   providers$ = this.store.select(SlotSelectors.providers);
+
   selectedProvider: Nullable<Provider> = null;
   selectedCategory: Nullable<SlotGameCategory> = null;
   expanded = false;

@@ -1,9 +1,9 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Provider, SlotGameCategory } from './slot.model';
 import { environment } from '../../../environment/environment';
-import { ApiResponse, extractData } from '../../../core';
+import { ApiResponse, extractData, filterCategories } from '../../../core';
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +19,8 @@ export class SlotService {
       }
     }).pipe(
       extractData(),
-      map(categories => {
-          return categories.filter(category => category?.platform !== 'mobile' && category.totalGames > 0 && !category.group && category.group !== '' || category.category === 'web:new_games');
-        }
-      ));
+      filterCategories()
+    );
   }
 
   public getSlotByProviders(provider: string): Observable<SlotGameCategory> {
