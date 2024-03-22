@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { NgStyle } from '@angular/common';
-import { SlotGame } from "../../pages/slots/store/slot.model";
+import { SlotGame } from "../../pages/slots";
 
 @Component({
   selector: 'app-game-card',

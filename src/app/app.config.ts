@@ -6,7 +6,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco } from '@ngneat/transloco';
 import { NgxsModule } from '@ngxs/store';
-import { SlotState } from './pages/slots/store/slot.state';
+import { SlotState } from './pages/slots';
 
 export const appConfig: ApplicationConfig = {
   providers: [
