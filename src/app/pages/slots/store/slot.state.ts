@@ -2,7 +2,12 @@ import { Action, State, StateContext } from '@ngxs/store';
 import { SlotStateModel } from './slot.model';
 import { inject, Injectable } from '@angular/core';
 import { SlotService } from './slot.service';
-import { FetchGamesWithCategories, SelectCategory, SetGames } from './slot.actions';
+import {
+  FetchGamesWithCategories,
+  GetSlotByProviders,
+  GetSlotProviders,
+  SetGames
+} from './slot.actions';
 import { tap } from 'rxjs';
 
 @State<SlotStateModel>({
@@ -11,7 +16,7 @@ import { tap } from 'rxjs';
     categories: [],
     games: [],
     providers: [],
-    selectedCategory: null,
+    slotsByProvider: [],
   }
 })
 @Injectable()
@@ -29,17 +34,32 @@ export class SlotState {
     );
   }
 
-  @Action(SelectCategory)
-  selectCategory(ctx: StateContext<SlotStateModel>, {payload}: SelectCategory) {
-    ctx.patchState({
-      selectedCategory: payload
-    });
-  }
-
   @Action(SetGames)
   setGames(ctx: StateContext<SlotStateModel>, {games}: SetGames) {
     ctx.patchState({
       games
     });
+  }
+
+  @Action(GetSlotByProviders)
+  getSlotsByProvider(ctx: StateContext<SlotStateModel>, {provider}: GetSlotByProviders) {
+    return this.slotsService.getSlotByProviders(provider).pipe(
+      tap((slotsByProvider) => {
+        ctx.patchState({
+          games: slotsByProvider.games
+        });
+      })
+    );
+  }
+
+  @Action(GetSlotProviders)
+  getProviders(ctx: StateContext<SlotStateModel>) {
+    return this.slotsService.getProvidersList().pipe(
+      tap((providers) => {
+        ctx.patchState({
+          providers
+        });
+      })
+    );
   }
 }

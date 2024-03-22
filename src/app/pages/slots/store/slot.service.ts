@@ -25,8 +25,19 @@ export class SlotService {
       ));
   }
 
-  public fetchProviders(): Observable<Provider[]> {
-    return this.http.get<ApiResponse<Provider[]>>(`${this.baseURL}/v2/slot/providers`, {
+  public getSlotByProviders(provider: string): Observable<SlotGameCategory> {
+    return this.http.get<ApiResponse<SlotGameCategory>>(`${this.baseURL}/v2/slot/providers/${provider}`, {
+      params: {
+        type: 'slot',
+        platform: 'desktop'
+      }
+    }).pipe(
+      extractData(),
+    );
+  }
+
+  public getProvidersList(): Observable<Provider[]> {
+    return this.http.get<ApiResponse<Provider[]>>(`${this.baseURL}`, {
       params: {
         type: 'slot',
         platform: 'desktop'

@@ -1,10 +1,11 @@
 import { SlotCategoryEnum } from '../../../core/enums/slot-category.enum';
+import { Nullable } from '../../../core/interfaces/util';
 
 export interface SlotStateModel {
   categories: SlotGameCategory[];
-  selectedCategory: SlotGameCategory | null;
   games: SlotGame[];
   providers: Provider[];
+  slotsByProvider: Provider[];
 }
 
 

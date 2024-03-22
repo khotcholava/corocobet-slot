@@ -10,13 +10,18 @@ export class SlotSelectors {
     return categories
   }
 
-  @Selector([ SlotSelectors.sliced.selectedCategory ])
-  static selectedCategory(selectedCategory: SlotStateModel['selectedCategory']) {
-    return selectedCategory
-  }
-
   @Selector([ SlotSelectors.sliced.games ])
   static games(games: SlotStateModel['games']) {
     return games
+  }
+
+  @Selector([ SlotSelectors.sliced.providers ])
+  static providers(providers: SlotStateModel['providers']) {
+    return providers
+  }
+
+  @Selector([ SlotSelectors.sliced.slotsByProvider ])
+  static slotsByProvider(slotsByProvider: SlotStateModel['slotsByProvider']) {
+    return slotsByProvider
   }
 }
